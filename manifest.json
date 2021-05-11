@@ -1,0 +1,44 @@
+{
+   "manifest_version": 2,
+   "name": "Vocab Express",
+   "description": "Tired of dooing your language homework??",
+   "version": "1.0.0",
+   "icons": {
+      "48": "icon.png"
+   },
+   "commands": {
+      "copy": {
+         "suggested_key": {
+            "windows": "Ctrl+B",
+            "mac": "Command+B"
+         },
+         "global": true,
+         "description": "Toggle feature foo"
+      },
+      "_execute_browser_action": {
+         "suggested_key": {
+            "windows": "Ctrl+Shift+Y",
+            "mac": "Command+Shift+Y",
+            "chromeos": "Ctrl+Shift+U",
+            "linux": "Ctrl+Shift+J"
+         }
+      },
+      "_execute_page_action": {
+         "suggested_key": {
+            "default": "Ctrl+Shift+E",
+            "windows": "Alt+Shift+P",
+            "mac": "Alt+Shift+P"
+         }
+      }
+   },
+   "content_scripts": [
+      {
+         "matches": ["<all_urls>"],
+         "js": ["content.js"]
+      }
+   ],
+   "background": {
+      "scripts": ["background.js"]
+   },
+   "permissions": ["clipboardRead"]
+}
